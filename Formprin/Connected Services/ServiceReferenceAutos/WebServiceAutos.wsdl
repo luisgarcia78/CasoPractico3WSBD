@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="ObtenerAutos">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerAutosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerAutosResult" type="tns:ArrayOfAutos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAutos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Autos" nillable="true" type="tns:Autos" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Autos">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Auto" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="Marca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Modelo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="anio_Fabricacion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertarAuto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_marca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_modelo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_anio_fabricacion" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_precio" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="_color" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarAutoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertarAutoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Modificar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_marcaM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_modeloM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_anio_fabricacionM" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="_precioM" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModificarResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAuto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EliminarAutoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EliminarAutoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerMarca">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_marca" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerMarcaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerMarcaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ObtenerAutosSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerAutos" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerAutosSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerAutosResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertarAutoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarAuto" />
+  </wsdl:message>
+  <wsdl:message name="InsertarAutoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarAutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarSoapIn">
+    <wsdl:part name="parameters" element="tns:Modificar" />
+  </wsdl:message>
+  <wsdl:message name="ModificarSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarResponse" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAutoSoapIn">
+    <wsdl:part name="parameters" element="tns:EliminarAuto" />
+  </wsdl:message>
+  <wsdl:message name="EliminarAutoSoapOut">
+    <wsdl:part name="parameters" element="tns:EliminarAutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMarcaSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerMarca" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMarcaSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerMarcaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceAutosSoap">
+    <wsdl:operation name="ObtenerAutos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consultar los autos de la base de datos</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerAutosSoapIn" />
+      <wsdl:output message="tns:ObtenerAutosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAuto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Insertar datos a la bd</wsdl:documentation>
+      <wsdl:input message="tns:InsertarAutoSoapIn" />
+      <wsdl:output message="tns:InsertarAutoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Modificar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Modificar datos de Autos</wsdl:documentation>
+      <wsdl:input message="tns:ModificarSoapIn" />
+      <wsdl:output message="tns:ModificarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAuto">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Eliminar datos a la bd</wsdl:documentation>
+      <wsdl:input message="tns:EliminarAutoSoapIn" />
+      <wsdl:output message="tns:EliminarAutoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMarca">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Consultar por modelo de auto</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerMarcaSoapIn" />
+      <wsdl:output message="tns:ObtenerMarcaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceAutosSoap" type="tns:WebServiceAutosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerAutos">
+      <soap:operation soapAction="http://tempuri.org/ObtenerAutos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAuto">
+      <soap:operation soapAction="http://tempuri.org/InsertarAuto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modificar">
+      <soap:operation soapAction="http://tempuri.org/Modificar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAuto">
+      <soap:operation soapAction="http://tempuri.org/EliminarAuto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMarca">
+      <soap:operation soapAction="http://tempuri.org/ObtenerMarca" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceAutosSoap12" type="tns:WebServiceAutosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerAutos">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerAutos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarAuto">
+      <soap12:operation soapAction="http://tempuri.org/InsertarAuto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modificar">
+      <soap12:operation soapAction="http://tempuri.org/Modificar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAuto">
+      <soap12:operation soapAction="http://tempuri.org/EliminarAuto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMarca">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerMarca" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceAutos">
+    <wsdl:port name="WebServiceAutosSoap" binding="tns:WebServiceAutosSoap">
+      <soap:address location="https://localhost:44307/WebServiceAutos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceAutosSoap12" binding="tns:WebServiceAutosSoap12">
+      <soap12:address location="https://localhost:44307/WebServiceAutos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

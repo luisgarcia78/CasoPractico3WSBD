@@ -1,0 +1,17 @@
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\bin\Debug\Formprin.exe.config
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\bin\Debug\Formprin.exe
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\bin\Debug\Formprin.pdb
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\bin\Debug\EntityFramework.dll
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\bin\Debug\WServicioAutos.dll
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\bin\Debug\WServicioAutos.pdb
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\bin\Debug\WServicioAutos.dll.config
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\bin\Debug\EntityFramework.xml
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\obj\Debug\Formprin.csproj.AssemblyReference.cache
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\obj\Debug\Formprin.FormInicio.resources
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\obj\Debug\Formprin.FormularioAgregar.resources
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\obj\Debug\Formprin.Properties.Resources.resources
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\obj\Debug\Formprin.csproj.GenerateResource.cache
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\obj\Debug\Formprin.csproj.CoreCompileInputs.cache
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\obj\Debug\Formprin.csproj.CopyComplete
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\obj\Debug\Formprin.exe
+D:\9°SEMESTRE\ServciosWeb\ProyectosWeb\CasoPractico3\Formprin\obj\Debug\Formprin.pdb
