@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CasoPrac3ModelStoreContainer" CdmEntityContainer="CasoPrac3Entities">
+    <EntitySetMapping Name="Autos">
+      <EntityTypeMapping TypeName="CasoPrac3Model.Autos">
+        <MappingFragment StoreEntitySet="Autos">
+          <ScalarProperty Name="ID_Auto" ColumnName="ID_Auto" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="anio_Fabricacion" ColumnName="anio_Fabricacion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
